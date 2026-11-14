@@ -6,14 +6,15 @@ It is currently untested!
 Requirements;
 - A modded Wii U
 - Any computer that can run docker (any OS)
-- Some basic understanding of how to use a command prompt/terminal This
-  server will turn whatever computer you set this up on into a pretendo
-  DNS proxy server. This means that every time you open Super Mario
-  Maker 1, you will need this computer running as well as the docker
-  container. You can do this on your primary machine without issue, but
-  if you have a second computer laying around it might be better to use
-  that instead. This guide also assumes you're using Windows, but the
-  instructions are comparable to Linux/Mac as well.
+- Some basic understanding of how to use a command prompt/terminal
+
+This server will turn whatever computer you set this up on into a pretendo
+DNS proxy server. This means that every time you open Super Mario
+Maker 1, you will need this computer running as well as the docker
+container. You can do this on your primary machine without issue, but
+if you have a second computer laying around it might be better to use
+that instead. This guide also assumes you're using Windows, but the
+instructions are comparable to Linux/Mac as well.
 
 The computer that you will need to use the local port 53, on Windows
 it's something required by some Hyper-V services. We're going to disable
