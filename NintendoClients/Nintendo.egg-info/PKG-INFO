@@ -1,0 +1,14 @@
+Metadata-Version: 2.4
+Name: Nintendo
+Version: 0.0.0
+Summary: Client for Nintendo game servers
+Home-page: https://github.com/Kinnay/NintendoClients
+Requires: requests
+Requires: beautifulsoup4
+Requires: lxml
+Requires: jsons
+License-File: LICENSE
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires
+Dynamic: summary

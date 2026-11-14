@@ -1,0 +1,290 @@
+
+import datastore;
+
+protocol DataStore_SMM2 : DataStore {
+	struct GetUsersParam {
+		list<pid> pids;
+		uint32 option = 0;
+	}
+	
+	struct GetCourseInfoParam {
+		list<uint64> data_ids;
+		uint32 option = 0x1CF;
+	}
+
+	struct SearchCoursesPointRankingParam {
+		uint32 option = 0x1CF;
+		ResultRange range;
+		uint8 difficulty;
+		list<uint8> reject_regions = [];
+	}
+	
+	struct SearchCoursesLatestParam {
+		uint32 option = 0x1CF;
+		ResultRange range;
+	}
+
+	struct SearchCoursesEndlessModeParam {
+		uint32 option = 0x1CF;
+		uint32 count;
+		uint8 difficulty;
+	}
+
+	struct GetUserOrCourseParam {
+		string code;
+		uint32 user_option = 0;
+		uint32 course_option = 0x1CF;
+	}
+	
+	struct BadgeInfo {
+		uint16 unk1;
+		uint8 unk2;
+	}
+
+	enum PlayStatsKeys {
+		PLAYS = 0,
+		CLEARS = 1,
+		ATTEMPTS = 2,
+		DEATHS = 3
+	}
+
+	enum MultiplayerStatsKeys {
+		MULTIPLAYER_SCORE = 0,
+		VERSUS_PLAYS = 2,
+		VERSUS_WINS = 3,
+		COOP_PLAYS = 10,
+		COOP_WINS = 11
+	}
+	
+	struct UserInfo {
+		pid pid;
+		string code;
+		string name;
+		UnknownStruct1 unk1;
+		qbuffer unk2;
+		string country;
+		uint8 region;
+		datetime last_active;
+		bool unk3;
+		bool unk4;
+		bool unk5;
+		map<uint8, uint32> play_stats;
+		map<uint8, uint32> unk6;
+		map<uint8, uint32> endless_challenge_high_scores;
+		map<uint8, uint32> multiplayer_stats;
+		map<uint8, uint32> unk7;
+		list<BadgeInfo> badges;
+		map<uint8, uint32> unk8;
+		map<uint8, uint32> unk9;
+	}
+
+	enum GameStyle {
+		SMB1 = 0,
+		SMB3 = 1,
+		SMW = 2,
+		NSMBU = 3,
+		SM3DW = 4
+	}
+
+	enum CourseTheme {
+		GROUND = 0,
+		UNDERGROUND = 1,
+		CASTLE = 2,
+		AIRSHIP = 3,
+		UNDERWATER = 4,
+		GHOST_HOUSE = 5,
+		SNOW = 6,
+		DESERT = 7,
+		SKY = 8,
+		FOREST = 9
+	}
+
+	enum CourseTag {
+		NONE = 0,
+		STANDARD = 1,
+		PUZZLE_SOLVING = 2,
+		SPEEDRUN = 3,
+		AUTOSCROLL = 4,
+		AUTO_MARIO = 5,
+		SHORT_AND_SWEET = 6,
+		MULTIPLAYER_VS = 7,
+		THEMED = 8,
+		MUSIC = 9
+	}
+
+	enum CourseDifficulty {
+		EASY = 0,
+		STANDARD = 1,
+		EXPERT = 2,
+		SUPER_EXPERT = 3
+	}
+
+	enum ClearCondition {
+		NORMAL = 0,
+		COLLECT_COINS = 4116396131,
+		KILL_SKIPSQUEAKS = 4042480826
+	}
+	
+	struct ThumbnailInfo {
+		string url;
+		uint8 data_type;
+		uint32 unk1;
+		buffer unk2;
+		string filename;
+	}
+	
+	struct CommentPictureReqGetInfoWithoutHeaders {
+		string url;
+		uint8 data_type;
+		uint32 unk1;
+		buffer unk2;
+		string filename;
+	}
+	
+	struct CourseInfo {
+		uint64 data_id;
+		string code;
+		pid owner_id;
+		string name;
+		string description;
+		uint8 game_style;
+		uint8 course_theme;
+		datetime upload_time;
+		uint8 difficulty;
+		uint8 tag1;
+		uint8 tag2;
+		uint8 unk1;
+		uint32 clear_condition;
+		uint16 clear_condition_magnitude;
+		uint16 unk2;
+		qbuffer unk3;
+		map<uint8, uint32> unk4;
+		map<uint8, uint32> unk5;
+		map<uint8, uint32> unk6;
+		UnknownStruct2 unk7;
+		map<uint8, uint32> unk8;
+		uint8 unk9;
+		uint8 unk10;
+		uint8 unk11;
+		uint8 unk12;
+		ThumbnailInfo one_screen_thumbnail;
+		ThumbnailInfo entire_thumbnail;
+	}
+	
+	struct CommentInfo {
+		uint64 unk1;
+		string unk2;
+		uint8 unk3;
+		uint8 unk4;
+		uint64 unk5;
+		uint16 unk6;
+		uint16 unk7;
+		uint8 unk8;
+		uint8 unk9;
+		uint8 unk10;
+		bool unk11;
+		bool unk12;
+		datetime unk13;
+		qbuffer unk14;
+		string unk15;
+		CommentPictureReqGetInfoWithoutHeaders picture;
+		uint16 unk16;
+		uint8 unk17;
+	}
+	
+	struct UnknownStruct1 {
+		uint16 unk1;
+		uint16 unk2;
+		uint16 unk3;
+		uint16 unk4;
+	}
+	
+	struct UnknownStruct2 {
+		uint64 unk1;
+		uint64 unk2;
+		uint32 unk3;
+		uint32 unk4;
+	}
+
+	struct SyncUserProfileParam {
+		string	username;
+		UnknownStruct1 unk1;
+		qbuffer	unk2;
+		uint8	unk3;
+		string	country;
+		bool	unk4;
+		bool	unk5;
+		string	unk_guid;
+		uint32	unk6;
+	}
+
+	struct SyncUserProfileResult {
+		uint64 pid;
+		string username;
+		UnknownStruct1 unk1;
+		qbuffer unk2;
+		uint8 unk3;
+		string country;
+		uint8 unk4;
+		bool unk5;
+		bool unk6;
+	}
+	
+	struct RelationObjectParam {
+		string key;
+		string value;
+	}
+	
+	struct RelationObjectReqGetInfo {
+		list<RelationObjectParam> headers;
+		uint32 expiration;
+	}
+
+	method(48) get_users(GetUsersParam param) {
+		list<UserInfo> users;
+		list<result> results;
+	}
+
+	method(49) sync_user_profile(SyncUserProfileParam param) {
+		SyncUserProfileResult result;
+	}
+
+	method(59) update_last_login_time() {}
+
+	method(65) get_username_ng_type() {
+		uint8 unk;
+	}
+	
+	method(70) get_course_info(GetCourseInfoParam param) {
+		list<CourseInfo> courses;
+		list<result> results;
+	}
+	
+	method(71) search_courses_point_ranking(SearchCoursesPointRankingParam param) {
+		list<CourseInfo> courses;
+		list<uint32> unk;
+		bool result;
+	}
+	
+	method(73) search_courses_latest(SearchCoursesLatestParam param) {
+		list<CourseInfo> courses;
+		bool result;
+	}
+
+	method(79) search_courses_endless_mode(SearchCoursesEndlessModeParam param) {
+		list<CourseInfo> courses;
+	}
+	
+	method(95) get_course_comments(uint64 data_id) {
+		list<CommentInfo> comments;
+	}
+	
+	method(131) get_user_or_course(GetUserOrCourseParam param) {
+		UserInfo user;
+		CourseInfo course;
+	}
+	
+	method(134) prepare_get_relation_object(uint8 type) {
+		RelationObjectReqGetInfo result;
+	}
+}
