@@ -1,0 +1,7 @@
+. {
+    hosts {
+        LOCAL_IP account.nintendo.net
+        LOCAL_IP wup-ama.app.nintendo.net
+    }
+    forward . 1.1.1.1
+}
