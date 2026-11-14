@@ -1,4 +1,4 @@
-This is a modification of mrexodia's https://github.com/SmmServer/SmmServer
+This is a modification of mrexodia's [smmserver](https://github.com/SmmServer/SmmServer)
 that runs a docker container for a real Wii U to connect to.
 
 It is currently untested!
@@ -17,9 +17,8 @@ Requirements;
 
 The computer that you will need to use the local port 53, on Windows
 it's something required by some Hyper-V services. We're going to disable
-this and replace it. Follow the instructions in the given link to
-disable these services;
-https://learn.microsoft.com/en-us/answers/questions/3753205/solved-unable-to-stop-internet-connection-sharing?forum=windows-all&referrer=answers
+this and replace it. Follow [these instructions](https://learn.microsoft.com/en-us/answers/questions/3753205/solved-unable-to-stop-internet-connection-sharing?forum=windows-all&referrer=answers) to
+disable these services.
 
 First things first, you will need docker installed and running. Go do
 docker's website and follow instructions for installing.
@@ -53,13 +52,11 @@ that's 90% of the hard part done.
 
 Click on the "wii-u-certificates" link, and download all these files,
 put them all in a temporary folder. Every file (except README.txt) will
-need to go into the Wii U system store
+need to go into the Wii U system store, using a homebrew app. You can use [FTPiiU Everywhere](https://consolemods.org/wiki/WiiU:FTPiiU_Everywhere).
 
 `mlc01/sys/title/0005001b10054000/content/scerts/`
 
-using a homebrew app. You can use "FTPiiU Everywhere".
 
-https://consolemods.org/wiki/WiiU:FTPiiU_Everywhere
 
 You will then need to modify you Wii U's connection settings. This is
 done without homebrew. Go to
