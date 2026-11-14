@@ -43,7 +43,8 @@ Windows Terminal". Next, we will run a couple commands. Run each command
 one at a time, ensuring there are no errors each time.
 
 ```
-docker import smmserver.tar smmserver:latest docker run -p53:53/udp -p53:53/tcp -p8000:8000 --name smmserver -d smmserver:latest
+docker import smmserver.tar smmserver:latest
+docker run -p53:53/udp -p53:53/tcp -p8000:8000 --name smmserver -d smmserver:latest
 ```
 
 In your browser, visit `localhost:8000`, and you should see a very simple
