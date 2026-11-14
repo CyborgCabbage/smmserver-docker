@@ -1,5 +1,5 @@
 This is a modification of mrexodia's [smmserver](https://github.com/SmmServer/SmmServer)
-that runs a docker container for a real Wii U to connect to.
+that runs a docker container for a real Wii U to connect to. (outlined in [this issue](https://github.com/SmmServer/SmmServer/issues/54))
 
 It is currently untested!
 
