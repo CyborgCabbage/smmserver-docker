@@ -21,7 +21,7 @@ this and replace it. Follow [these instructions](https://learn.microsoft.com/en-
 disable these services.
 
 First things first, you will need docker installed and running. Go do
-docker's website and follow instructions for installing.
+[docker's website](https://docs.docker.com/engine/install/) and follow instructions for installing.
 
 Next, open a command prompt. Type this command to ensure docker is
 installed and running;
