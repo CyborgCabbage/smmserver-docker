@@ -34,7 +34,7 @@ docker
 You should get a long list of commands that can be run. If you get an
 error, docker is not set up properly.
 
-Next, place the `smmserver-docker-image.tar` file as-is somewhere on
+Next, place the [smmserver-docker-image.tar](https://github.com/jamieyello/smmserver-docker/releases/tag/untested) file as-is somewhere on
 your computer (don't unzip it). This folder is temporary, so you can
 just create the folder on your desktop.
 
