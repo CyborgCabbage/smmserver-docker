@@ -56,9 +56,7 @@ Click on the "wii-u-certificates" link, and download all these files,
 put them all in a temporary folder. Every file (except README.txt) will
 need to go into the Wii U system store, using a homebrew app. You can use [FTPiiU Everywhere](https://consolemods.org/wiki/WiiU:FTPiiU_Everywhere).
 
-`mlc01/sys/title/0005001b10054000/content/scerts/`
-
-
+Put all files into your Wii U's `mlc01/sys/title/0005001b10054000/content/scerts/`
 
 You will then need to modify you Wii U's connection settings. This is
 done without homebrew. Go to
